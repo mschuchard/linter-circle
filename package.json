@@ -1,0 +1,59 @@
+{
+  "name": "linter-circle",
+  "main": "./lib/main.js",
+  "version": "1.0.0",
+  "description": "Circle config lint via config validate",
+  "repository": "https://github.com/mschuchard/linter-circle",
+  "license": "MIT",
+  "keywords": [
+    "lint",
+    "linter",
+    "circle",
+    "circleci"
+  ],
+  "scripts": {
+    "test": "atom --test spec"
+  },
+  "bugs": {
+    "url": "https://github.com/mschuchard/linter-circle/issues"
+  },
+  "engines": {
+    "atom": ">0.95.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "atom-linter": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "latest"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "atom": false
+    }
+  }
+}
