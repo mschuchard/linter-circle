@@ -1,0 +1,12 @@
+---
+version: 2.1
+
+jobs:
+  test:
+    steps:
+    - checkout
+
+workflows:
+  execute_tests:
+    jobs:
+    - test
