@@ -19,7 +19,7 @@ jobs:
         command: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev tar
     - run:
         name: install circleci cli
-        command: curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | bash
+        command: curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | sudo bash
     - run:
         name: start display server for Atom
         command: /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x16 +extension RANDR
