@@ -15,7 +15,7 @@ git:
 # setup tests
 env:
   global:
-  - APM_TEST_PACKAGES='language-terraform'
+  - APM_TEST_PACKAGES='language-yaml'
   - ATOM_LINT_WITH_BUNDLED_NODE='true'
 
 os: linux
