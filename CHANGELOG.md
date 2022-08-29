@@ -1,9 +1,6 @@
 ### (Next)
 - Fix check on Circle config file.
-
-machine:
-- image
-dumps out a lot of lines to the display
+- Refine validation output parser.
 
 ### 1.0.0
 - Initial version ready for wide usage.
