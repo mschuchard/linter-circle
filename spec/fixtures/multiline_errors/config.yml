@@ -1,0 +1,14 @@
+---
+version: 2.1
+
+jobs:
+  test:
+    machine:
+      - image: ubuntu-2004:current
+    steps:
+    - checkout
+
+workflows:
+  execute_tests:
+    jobs:
+    - test
