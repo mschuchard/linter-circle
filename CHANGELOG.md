@@ -1,4 +1,4 @@
-### (Next)
+### 1.0.1
 - Fix check on Circle config file.
 - Refine validation output parser.
 
