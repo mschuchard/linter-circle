@@ -1,3 +1,6 @@
+### 1.0.2
+- Add Ignore Deprecated Images config option.
+
 ### 1.0.1
 - Fix check on Circle config file.
 - Refine validation output parser.
