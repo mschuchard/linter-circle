@@ -109,6 +109,41 @@ describe('The Circle provider for Linter', () => {
     });
   });
 
+  describe('checks a file with a yaml syntax issue', () => {
+    let editor = null;
+    const badFile = path.join(__dirname, 'fixtures/yaml_syntax/.circleci', 'config.yml');
+    beforeEach(() => {
+      waitsForPromise(() =>
+        atom.workspace.open(badFile).then(openEditor => {
+          editor = openEditor;
+        })
+      );
+    });
+
+    it('finds the message', () => {
+      waitsForPromise(() =>
+        lint(editor).then(messages => {
+          expect(messages.length).toEqual(1);
+        })
+      );
+    });
+
+    it('verifies the messages', () => {
+      waitsForPromise(() => {
+        return lint(editor).then(messages => {
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual('	- mapping values are not allowed here');
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+yaml_syntax\/.circleci\/config\.yml$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[0, 0], [0, 1]]);
+        });
+      });
+    });
+  });
+
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {
       const goodFile = path.join(__dirname, 'fixtures/clean/.circleci', 'config.yml');

@@ -1,6 +1,9 @@
 ### 1.0.3 (Next)
 - Add Organization ID config option.
 - Stricter enforcement of only lint CircleCI config files.
+- Display YAML syntax errors.
+
+improve yaml syntax error display
 
 ### 1.0.2
 - Add Ignore Deprecated Images config option.
