@@ -1,4 +1,4 @@
-### 1.0.3 (Next)
+### 1.0.3
 - Add Organization ID config option.
 - Stricter enforcement of only lint CircleCI config files.
 - Display YAML syntax errors.

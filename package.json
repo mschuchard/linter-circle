@@ -1,7 +1,7 @@
 {
   "name": "linter-circle",
   "main": "./lib/main.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Circle config lint via config validate",
   "repository": "https://github.com/mschuchard/linter-circle",
   "license": "MIT",
