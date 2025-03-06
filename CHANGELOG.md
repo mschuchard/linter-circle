@@ -1,3 +1,6 @@
+(Next)
+- fixture for ignore non circle config yaml
+
 ### 1.0.3
 - Add Organization ID config option.
 - Stricter enforcement of only lint CircleCI config files.
